@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var commentHidden: Bool = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if !commentHidden {
+                CommentItem().padding()
+            }
+            Button("Write Comment", action: {
+                commentHidden.toggle()
+            })
+        }
     }
 }
 
