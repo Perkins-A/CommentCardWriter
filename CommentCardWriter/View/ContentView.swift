@@ -15,7 +15,7 @@ struct ContentView: View {
         Form {
             CommentItem(beak: "DPC")
             CommentItem(beak: "MC")
-        }
+        } 
     }
 }
 
