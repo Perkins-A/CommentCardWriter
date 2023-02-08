@@ -73,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287E3E882993B13C00B3CD3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		28C0441A298E6FEC001A13E7 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +103,7 @@
 		28C04425298E6FEC001A13E7 /* CommentCardWriter */ = {
 			isa = PBXGroup;
 			children = (
+				287E3E882993B13C00B3CD3F /* Model */,
 				28C04450298E712C001A13E7 /* View */,
 				28C0442A298E6FEF001A13E7 /* Assets.xcassets */,
 				28C0442C298E6FEF001A13E7 /* Preview Content */,
