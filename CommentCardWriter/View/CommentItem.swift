@@ -10,17 +10,22 @@ import SwiftUI
 struct CommentItem: View {
     @State private var commentHidden: Bool = true
     let beak: String
+    @State var comment: String = "I like this subject."
     
     var body: some View {
         Section (header: Text(beak)) {
             if !commentHidden{
-                Text("I'm the greatest to have ever taken this class. In fact, I should be teaching.")
+                TextField(
+                    text: $comment,
+                    prompt: Text("Write comments here")
+                ) {
+                    Text(comment)
+                }
             }
-            Section {
-                Button("Copy", action:{})
-                Button("Re-write", action:{commentHidden.toggle()})
-            }
-            .padding()
+            Button("Copy", action:{
+                UIPasteboard.general.setValue(comment, forPasteboardType: "public.plain-text")
+            })
+            Button("Re-write", action:{commentHidden.toggle()})
         }
     }
 }

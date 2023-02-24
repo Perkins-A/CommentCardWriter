@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var commentHidden: Bool = true
     
     var body: some View {
-        Form {
+        List() {
             CommentItem(beak: "DPC")
             CommentItem(beak: "MC")
         } 
