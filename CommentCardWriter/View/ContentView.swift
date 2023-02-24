@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var commentHidden: Bool = true
     
     var body: some View {
         List() {
