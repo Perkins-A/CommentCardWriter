@@ -11,21 +11,31 @@ struct CommentItem: View {
     @State private var commentHidden: Bool = true
     let beak: String
     @State var comment: String = "I like this subject."
+    @State var enjoyment = 5.0
     
     var body: some View {
         Section (header: Text(beak)) {
-            if !commentHidden{
-                TextField(
-                    text: $comment,
-                    prompt: Text("Write comments here")
-                ) {
-                    Text(comment)
-                }
-            }
+            TextField(
+                comment,
+                text: $comment,
+                prompt: Text("Write comments here")
+            )
             Button("Copy", action:{
                 UIPasteboard.general.setValue(comment, forPasteboardType: "public.plain-text")
             })
-            Button("Re-write", action:{commentHidden.toggle()})
+            Button("Re-write", action:{
+                commentHidden.toggle()
+            })
+            HStack {
+                Text("Enjoyment")
+                Slider(
+                    value: $enjoyment,
+                    in: 0...10,
+                    onEditingChanged: { _ in
+                        print("editing")
+                    }
+                )
+            }
         }
     }
 }
