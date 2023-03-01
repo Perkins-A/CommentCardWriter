@@ -8,28 +8,25 @@
 import SwiftUI
 
 struct CommentItem: View {
-    @State private var commentHidden: Bool = true
-    let beak: String
-    @State var comment: String = "I like this subject."
-    @State var enjoyment = 5.0
+    @State var division: Division
     
     var body: some View {
-        Section (header: Text(beak)) {
+        Section (header: Text("\(division.beak) - \(division.code)")) {
             TextField(
-                comment,
-                text: $comment,
+                division.comment,
+                text: $division.comment,
                 prompt: Text("Write comments here")
             )
             Button("Copy", action:{
-                UIPasteboard.general.setValue(comment, forPasteboardType: "public.plain-text")
+                UIPasteboard.general.setValue(division.comment, forPasteboardType: "public.plain-text")
             })
             Button("Re-write", action:{
-                commentHidden.toggle()
+                division.rewrite()
             })
             HStack {
                 Text("Enjoyment")
                 Slider(
-                    value: $enjoyment,
+                    value: $division.enjoyment,
                     in: 0...10,
                     onEditingChanged: { _ in
                         print("editing")
@@ -42,6 +39,6 @@ struct CommentItem: View {
 
 struct Comments_Previews: PreviewProvider {
     static var previews: some View {
-        CommentItem(beak:"DPC")
+        CommentItem(division: Division("MC","CComX-1"))
     }
 }

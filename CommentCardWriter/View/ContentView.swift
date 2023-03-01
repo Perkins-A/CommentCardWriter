@@ -12,8 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         List() {
-            CommentItem(beak: "DPC")
-            CommentItem(beak: "MC")
+            CommentItem(division: Division("DPC","CComX-1"))
+            CommentItem(division: Division("DPC","CComX-1"))
         } 
     }
 }
