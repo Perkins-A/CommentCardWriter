@@ -12,8 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         List() {
-            CommentItem(division: Division("DPC","CComX-1"))
-            CommentItem(division: Division("DPC","CComX-1"))
+            CommentItem(division: Division("DPC","CComX-1","Comp-sci"))
+            CommentItem(division: Division("MC","CComX-1","Comp-sci"))
+            CommentItem(division: Division("BJH","CMat2-1","Maths"))
         } 
     }
 }
